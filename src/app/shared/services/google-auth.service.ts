@@ -39,7 +39,7 @@ export class GoogleAuthService implements OnInit {
     })
   }
 
-  async getUserProfile() {
+  async getUserProfile(): Promise<Record<string, any> | ''> {
     if (this.oAuthService.hasValidAccessToken()) {
       return await this.oAuthService.loadUserProfile()
     }
