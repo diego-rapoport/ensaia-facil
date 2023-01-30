@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component'
 import { GoogleCalendarService } from '../shared/services/google-calendar.service'
 import { CalendarModule, DateAdapter } from 'angular-calendar'
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
+import { GCalendarToACalendarService } from '../shared/services/gcalendar-to-acalendar.service'
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -17,6 +18,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
       useFactory: adapterFactory,
     }),
   ],
-  providers: [GoogleCalendarService],
+  providers: [GoogleCalendarService, GCalendarToACalendarService],
 })
 export class DashboardModule {}
