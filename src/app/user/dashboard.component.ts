@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
     private googleService: GoogleAuthService,
     private gCalendarService: GoogleCalendarService,
     private transformService: GCalendarToACalendarService
-  ) {}
+  ) { }
 
   async ngOnInit(): Promise<void> {
     const tempDate = new Date()
@@ -36,9 +36,9 @@ export class DashboardComponent implements OnInit {
     tempDate.setDate(this.today.getDate() + 7)
     this.eventsTo = formatRFC3339(tempDate).replace(regexTimeFormat, 'Z')
     this.eventsFrom = this.eventsFrom.replace(regexTimeFormat, 'Z')
-    console.log('DE: ', this.eventsFrom, ' Até: ', this.eventsTo)
-    this.user = await this.googleService.getUserProfile()
     this.gCalendarService.token = this.googleService.getToken()
+    this.user = await this.googleService.getUserProfile()
+    if (!this.user) console.log('Usuário não logado!!')
   }
 
   async getMyEvents() {
