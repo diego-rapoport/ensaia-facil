@@ -16,6 +16,7 @@ export class GoogleAuthService implements OnInit {
     showDebugInformation: true,
     logoutUrl: environment.LOGOUT,
     sessionChecksEnabled: true,
+    oidc: false,
   }
   token: string = ''
 

@@ -1,10 +1,15 @@
-<h1>Bem vindo(a)!!</h1>
-<p *ngIf="user">Seu email é: {{ user.info.email }}</p>
-<button (click)="getMyEvents()">Meus eventos:</button>
-<p>De {{ eventsFrom | date }}</p>
-<p>Até {{ eventsTo | date }}</p>
-<div *ngIf="events.length">
-  <mwl-calendar-week-view [viewDate]="viewDate" [events]="events">
-  </mwl-calendar-week-view>
+<div class="flex flex-wrap justify-between items-center">
+  <app-sidebar></app-sidebar>
+  <div class="relative right-64">
+    <h1>Bem vindo(a)!!</h1>
+    <p *ngIf="user">Seu email é: {{ user.info.email }}</p>
+    <button (click)="getMyEvents()">Meus eventos:</button>
+    <p>De {{ eventsFrom | date }}</p>
+    <p>Até {{ eventsTo | date }}</p>
+    <div *ngIf="events.length">
+      <mwl-calendar-week-view [viewDate]="viewDate" [events]="events">
+      </mwl-calendar-week-view>
+    </div>
+    <button (click)="logout()">Sair</button>
+  </div>
 </div>
-<button (click)="logout()">Sair</button>

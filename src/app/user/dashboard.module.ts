@@ -7,9 +7,10 @@ import { GoogleCalendarService } from '../shared/services/google-calendar.servic
 import { CalendarModule, DateAdapter } from 'angular-calendar'
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns'
 import { GCalendarToACalendarService } from '../shared/services/gcalendar-to-acalendar.service'
+import { SidebarComponent } from '../shared/layout/sidebar/sidebar.component'
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, SidebarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -20,4 +21,4 @@ import { GCalendarToACalendarService } from '../shared/services/gcalendar-to-aca
   ],
   providers: [GoogleCalendarService, GCalendarToACalendarService],
 })
-export class DashboardModule {}
+export class DashboardModule { }
